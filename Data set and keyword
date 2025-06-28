@@ -1,0 +1,3 @@
+his study is done to make an attempt to predict the wind speed using two very potential and wide frames of statistical data mining and machine learning approaches; Support Vector Regression (SVR) and Artificial Neural Network (ANN) with back propagation technique. 7 years (2008 - 2014) historical dataset of wind speed of Chittagong coastal area were collected from Bangladesh meteorological division (BMD) for undertaking the experiment. Leaky ReLU function was applied as the rectifier to the input data to control the thresholds and activations of neurons in MLP.
+Wind speed forecasting, statistical learning, Support Vector Regression (SVR), Artificial Neural Network (ANN), Bangladesh meteorological division (BMD)
+
