@@ -1,0 +1,401 @@
+A.Support Vector Regression (SVR)
+SVM regression performs linear regression in the high dimension feature space using 
+𝐸
+E – insensitivity loss and, at the same time tries to reduce model complexity by minimizing
+∥α∥ 
+2
+ 
+. This can be described by introducing slack variables
+𝜉
+𝑖
+ξ 
+i
+​
+  and 
+𝜉
+𝑖
+∗
+ξ 
+i
+∗
+​
+  where 
+𝑖
+=
+1
+,
+.
+.
+.
+,
+𝑛
+i=1,...,n to measure the deviation of training sample outside 
+𝜀
+ε - sensitive zone [3,4].
+
+1
+2
+∥
+𝛼
+∥
+2
++
+𝐶
+∑
+𝑖
+=
+1
+𝑛
+(
+𝜉
+𝑖
++
+𝜉
+𝑖
+∗
+)
+(
+1
+)
+2
+1
+​
+ ∥α∥ 
+2
+ +C 
+i=1
+∑
+n
+​
+ (ξ 
+i
+​
+ +ξ 
+i
+∗
+​
+ )(1)
+min
+⁡
+{
+𝑦
+𝑖
+−
+𝑓
+(
+𝑥
+𝑖
+,
+𝜔
+)
+≤
+𝜀
++
+𝜉
+𝑖
+∗
+𝑓
+(
+𝑥
+𝑖
+,
+𝜔
+)
+−
+𝑦
+𝑖
+≤
+𝜀
++
+𝜉
+𝑖
+𝜉
+𝑖
+,
+𝜉
+𝑖
+∗
+≥
+0
+,
+𝑖
+=
+1...
+𝑛
+(
+2
+)
+min 
+⎩
+⎨
+⎧
+​
+  
+y 
+i
+​
+ −f(x 
+i
+​
+ ,ω)≤ε+ξ 
+i
+∗
+​
+ 
+f(x 
+i
+​
+ ,ω)−y 
+i
+​
+ ≤ε+ξ 
+i
+​
+ 
+ξ 
+i
+​
+ ,ξ 
+i
+∗
+​
+ ≥0,i=1...n
+​
+ (2)
+This optimization problem can transform into the dual problem and solution is given by
+
+𝑓
+(
+𝑥
+)
+=
+∑
+𝑖
+=
+1
+𝑛
+𝑠
+𝑣
+(
+𝛼
+𝑖
+−
+𝛼
+𝑖
+∗
+)
+𝐾
+(
+𝑥
+𝑖
+,
+𝑥
+)
+(
+3
+)
+f(x)= 
+i=1
+∑
+n 
+sv
+​
+ 
+​
+ (α 
+i
+​
+ −α 
+i
+∗
+​
+ )K(x 
+i
+​
+ ,x)(3)
+Subject to,
+
+0
+≤
+𝛼
+𝑖
+∗
+≤
+𝐶
+,
+0
+≤
+𝛼
+𝑖
+≤
+𝐶
+0≤α 
+i
+∗
+​
+ ≤C,0≤α 
+i
+​
+ ≤C
+Where 
+𝑛
+𝑠
+𝑣
+n 
+sv
+​
+  is the number of support vector (SVs) and the kernel function
+
+𝐾
+(
+𝑥
+,
+𝑥
+𝑖
+)
+=
+∑
+𝑗
+=
+1
+𝑚
+𝑔
+𝑗
+(
+𝑥
+)
+𝑔
+𝑗
+(
+𝑥
+𝑖
+)
+(
+4
+)
+K(x,x 
+i
+​
+ )= 
+j=1
+∑
+m
+​
+ g 
+j
+​
+ (x)g 
+j
+​
+ (x 
+i
+​
+ )(4)
+It is well known that SVM generalization performance depends on a good setting of meta-parameters 
+𝐶
+,
+𝐸
+C,E and kernel parameters [4].
+
+B. Artificial Neural Network (ANN)
+ANN [10] is based on a large collection of artificial neurons mathematically simulating the biological brain in solves problems. ANN can perform as a linear or non-linear function mapping from input data to output target. Multilayer perceptron (MLP) is a one of the most well-known neural networks able to learn any nonlinear function if there are enough training data and given a suitable number of neurons.
+
+The activation function of the artificial neurons in ANNs implementing the back propagation algorithm is a weighted sum (the sum of the inputs 
+𝑥
+𝑖
+x 
+i
+​
+  multiplied by their respective weights 
+𝑤
+𝑖
+𝑗
+w 
+ij
+​
+ ) [29]:
+
+𝐴
+𝑗
+(
+𝑥
+,
+𝑤
+)
+=
+∑
+𝑖
+=
+0
+𝑛
+𝑥
+𝑖
+𝑤
+𝑖
+𝑗
+(
+5
+)
+A 
+j
+​
+ (x,w)= 
+i=0
+∑
+n
+​
+ x 
+i
+​
+ w 
+ij
+​
+ (5)
+The activation depends only on the inputs and the weights. If the output function would be the identity, then the neuron would be called linear. The most common output function is the sigmoidal function [29]:
+
+𝑂
+𝑗
+(
+𝑥
+,
+𝑤
+)
+=
+1
+1
++
+𝑒
+−
+𝐴
+𝑗
+(
+𝑥
+,
+𝑤
+)
+(
+6
+)
+O 
+j
+​
+ (x,w)= 
+1+e 
+−A 
+j
+​
+ (x,w)
+ 
+1
+​
+ (6)
+Leaky ReLu function was used to replacement “Zero values” from dataset. There are some advantages of using ReLu in ANN. One major benefit is the reduced likelihood of the gradient to vanish. This arises when 
+𝑎
+>
+0
+a>0. In this regime the gradient has a constant value. In contrast, the gradient of sigmoid becomes increasingly small as the absolute value of x increases. The constant gradient of ReLUs results in faster learning. The other benefit of ReLUs is sparsity. Sparsity arises when 
+𝑎
+≤
+0
+a≤0. The more such units that exist in a layer the sparser the resulting representation. Sigmoid on the other hand are always likely to generate some non-zero value resulting in dense representations. Sparse representations seem to be more beneficial than dense representations.
+
