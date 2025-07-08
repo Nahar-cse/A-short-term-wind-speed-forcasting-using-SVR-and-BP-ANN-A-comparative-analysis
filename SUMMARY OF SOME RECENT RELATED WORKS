@@ -1,0 +1,9 @@
+Author	Prediction	Machine learning algorithm	Accuracy	Year
+Orlando Ohashi and Lu’s Torgo [2]	Short-term	artificial intelligent models	95%	2012
+E. Cadenas and W. Rivera [6]	Short-term	ARIMA, ANN	95%	2007
+T. Knudsen, T. Bak, and M. Soltani [7]	Short-term	Nonlinear time varying turbulence models.	95%	2011
+R. L. Welch, S. M. Ruffing, and G. K. Venayagamoorthy [10]	Short-term	neural networks	80%	2009
+Y.-Y. Hong, T.-H. Yu, and C.-Y. Liu [13]	Short-term	artificial intelligence	97%	2013
+S. S. Soman, H. Zareipour, O. Malik, and P. Mandal [14]	Short-term	artificial intelligent methods	96%	2010
+
+In TABLE I shows literature Review Summary about prior studies. We got wind speed prediction accuracy less than 98% in reference no [2, 6, 7, 10, 13,14]. But our motivation was to accede this benchmark using different kinds Data preprocessing and machine learning techniques. The result evaluation process of this study, conducted on the predicted outcomes shows that our proposed technique performs higher than the conventional frameworks that mentioned in TABLE I in term of accuracy and process running time. Our proposed approach yielded the utmost prediction of 99.8% accuracy.
